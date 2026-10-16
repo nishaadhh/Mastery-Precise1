@@ -1,0 +1,3790 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mastery &amp; Precise Business House &mdash; Connecting Purpose with Progress</title>
+  <link rel="icon" type="image/svg+xml" href="images/mp-mark.svg">
+  <meta name="description"
+    content="Mastery &amp; Precise Business House Private Limited &mdash; A multidisciplinary consulting organization delivering strategic advisory, logistics, healthcare, trade, and business excellence.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ======================== TOKENS ======================== */
+    :root {
+      --bg: #f7fafb;
+      --bg-alt: #edf3f5;
+      --bg-card: #ffffff;
+      --bg-glass: rgba(255, 255, 255, 0.82);
+      --navy: #082A3A;
+      --navy-mid: #0B3C52;
+      --copper: #B8802A;
+      --copper-lt: #D9A646;
+      --copper-gw: rgba(192,138,44, 0.14);
+      --gold: #C08A2C;
+      --text: #0F3547;
+      --muted: #55727F;
+      --line: rgba(8,42,58, 0.1);
+      --line-b: rgba(8,42,58, 0.16);
+      --shadow-sm: 0 2px 12px rgba(8,42,58, 0.08);
+      --shadow-md: 0 8px 40px rgba(8,42,58, 0.12);
+      --shadow-lg: 0 20px 64px rgba(8,42,58, 0.14);
+      --radius: 12px;
+      --radius-lg: 24px;
+      --tr: 0.32s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Work Sans", sans-serif;
+      font-weight: 400;
+      line-height: 1.65;
+      overflow-x: hidden
+    }
+
+    html {
+      overflow-x: clip
+    }
+
+    @media(max-width:768px) {
+
+      .reveal-left,
+      .reveal-right {
+        transform: translateY(24px)
+      }
+
+      .reveal-left.in,
+      .reveal-right.in {
+        transform: translateY(0)
+      }
+    }
+
+    mark {
+      background: linear-gradient(120deg, var(--copper-gw), rgba(192,138,44, 0.15));
+      color: var(--copper);
+      padding: 0 0.15em;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Fraunces", serif;
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: -.02em
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    img {
+      display: block;
+      width: 100%
+    }
+
+    .eyebrow {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .7rem;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--copper-lt);
+      display: inline-flex;
+      align-items: center;
+      gap: .7rem
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 1.5px;
+      background: linear-gradient(90deg, var(--copper-lt), transparent);
+      display: inline-block
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5vw
+    }
+
+    /* ======================== CANVAS ======================== */
+    #bg-canvas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: .35
+    }
+
+    /* ======================== HEADER ======================== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      transition: background var(--tr), box-shadow var(--tr)
+    }
+
+    header.scrolled {
+      background: rgba(250, 247, 242, .96);
+      backdrop-filter: blur(20px) saturate(1.5);
+      box-shadow: 0 1px 0 var(--line-b), 0 6px 28px rgba(8,42,58, .08)
+    }
+
+    nav.wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.2rem;
+      padding-bottom: 1.2rem;
+      transition: padding var(--tr);
+    }
+
+    header.scrolled nav.wrap {
+      padding-top: 0.6rem;
+      padding-bottom: 0.6rem;
+    }
+
+    header .logo img {
+      height: 70px;
+      width: auto;
+      object-fit: contain;
+      transition: height var(--tr);
+    }
+
+    header.scrolled .logo img {
+      height: 44px;
+    }
+
+    header .logo-text-block {
+      transition: all var(--tr);
+    }
+
+    header.scrolled .logo-text-block .logo-main-name {
+      font-size: 1rem;
+    }
+
+    header.scrolled .logo-text-block .logo-sub,
+    header.scrolled .logo-text-block .logo-tagline {
+      display: none;
+    }
+
+    .logo {
+      font-family: "Fraunces", serif;
+      font-size: 1.1rem;
+      letter-spacing: .04em;
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+      color: var(--navy)
+    }
+
+    .logo-badge {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--copper), var(--gold));
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      font-size: .72rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px var(--copper-gw);
+      font-family: "Space Grotesk", sans-serif
+    }
+
+    .logo .amp {
+      color: var(--copper-lt);
+      margin: 0 .1em
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 1.25rem;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .74rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .navlinks a:not(.nav-cta) {
+      color: var(--muted);
+      position: relative;
+      padding-bottom: 3px;
+      transition: color var(--tr)
+    }
+
+    .navlinks a:not(.nav-cta)::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 1.5px;
+      background: linear-gradient(90deg, var(--copper-lt), var(--gold));
+      transition: width .3s ease
+    }
+
+    .navlinks a:not(.nav-cta):hover {
+      color: var(--navy)
+    }
+
+    .navlinks a:not(.nav-cta):hover::after {
+      width: 100%
+    }
+
+    .nav-dropdown {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-dropdown-trigger {
+      background: none;
+      border: none;
+      padding: 0 0 3px 0;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .74rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      color: var(--muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      position: relative;
+      transition: color var(--tr);
+    }
+
+    .nav-dropdown-trigger::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 1.5px;
+      background: linear-gradient(90deg, var(--copper-lt), var(--gold));
+      transition: width .3s ease;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-trigger,
+    .nav-dropdown.open .nav-dropdown-trigger {
+      color: var(--navy);
+    }
+
+    .nav-dropdown:hover .nav-dropdown-trigger::after,
+    .nav-dropdown.open .nav-dropdown-trigger::after {
+      width: 100%;
+    }
+
+    .nav-dropdown-trigger .caret {
+      font-size: 0.65rem;
+      transition: transform var(--tr);
+      display: inline-block;
+    }
+
+    .nav-dropdown.open .nav-dropdown-trigger .caret {
+      transform: rotate(180deg);
+    }
+
+    .nav-dropdown-content {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--bg-card);
+      min-width: 290px;
+      box-shadow: var(--shadow-md);
+      border-radius: var(--radius);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity var(--tr), transform var(--tr), visibility var(--tr);
+      padding: 0.85rem;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      border: 1px solid var(--line);
+    }
+
+    .nav-dropdown:hover .nav-dropdown-content,
+    .nav-dropdown.open .nav-dropdown-content {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .country-item {
+      display: flex;
+      flex-direction: column;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      transition: border-color var(--tr), background var(--tr);
+    }
+
+    .country-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.65rem 0.8rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--navy);
+      text-align: left;
+      transition: background var(--tr), color var(--tr);
+      gap: 0.75rem;
+    }
+
+    .country-name {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .country-arrow {
+      font-size: 0.7rem;
+      color: var(--copper-lt);
+      transition: transform var(--tr);
+      display: inline-block;
+    }
+
+    .country-item:hover .country-btn,
+    .country-item.open .country-btn {
+      background: rgba(192,138,44, 0.08);
+      color: var(--copper);
+    }
+
+    .country-item:hover .country-arrow,
+    .country-item.open .country-arrow {
+      transform: rotate(90deg);
+    }
+
+    .country-vendors {
+      display: none;
+      flex-direction: column;
+      padding: 0.35rem 0.65rem 0.5rem 1.6rem;
+      gap: 0.35rem;
+      animation: fadeInSub 0.22s ease forwards;
+    }
+
+    @keyframes fadeInSub {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .country-item:hover .country-vendors,
+    .country-item.open .country-vendors {
+      display: flex;
+    }
+
+    .vendor-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      color: var(--navy) !important;
+      font-family: "Work Sans", sans-serif !important;
+      font-size: 0.88rem !important;
+      font-weight: 500 !important;
+      text-transform: none !important;
+      letter-spacing: normal !important;
+      padding: 0.35rem 0.55rem !important;
+      border-radius: 6px;
+      transition: color var(--tr), background var(--tr), transform var(--tr) !important;
+      text-decoration: none !important;
+    }
+
+    .vendor-link::after {
+      display: none !important;
+    }
+
+    .vendor-link .vendor-bullet {
+      color: var(--copper-lt);
+      font-size: 0.95rem;
+      transition: transform var(--tr);
+    }
+
+    .vendor-link:hover {
+      color: var(--copper) !important;
+      background: rgba(192,138,44, 0.08);
+      transform: translateX(4px);
+    }
+
+    .vendor-link:hover .vendor-bullet {
+      transform: translateX(2px);
+    }
+
+    .vendor-empty {
+      font-family: "Work Sans", sans-serif;
+      font-size: 0.8rem;
+      font-style: italic;
+      color: var(--muted);
+      opacity: 0.75;
+      padding: 0.25rem 0.55rem;
+      user-select: none;
+      cursor: default;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--copper), var(--copper-lt));
+      color: #fff !important;
+      font-weight: 600;
+      padding: .52rem 1.3rem;
+      border-radius: 50px;
+      box-shadow: 0 4px 16px var(--copper-gw);
+      transition: transform var(--tr), box-shadow var(--tr) !important
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px var(--copper-gw)
+    }
+
+    .navmenu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 210;
+      padding: 8px
+    }
+
+    .navmenu-toggle span {
+      width: 22px;
+      height: 1.5px;
+      background: var(--navy);
+      display: block;
+      transition: transform .3s, opacity .3s
+    }
+
+    .navmenu-toggle.active span:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg)
+    }
+
+    .navmenu-toggle.active span:nth-child(2) {
+      opacity: 0
+    }
+
+    .navmenu-toggle.active span:nth-child(3) {
+      transform: translateY(-6.5px) rotate(-45deg)
+    }
+
+    /* ======================== BUTTONS ======================== */
+    .btn {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .8rem;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: .9rem 1.85rem;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      transition: transform var(--tr), box-shadow var(--tr);
+      cursor: pointer;
+      border: none
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--copper) 0%, var(--copper-lt) 60%, var(--gold) 100%);
+      color: #fff;
+      box-shadow: 0 6px 24px var(--copper-gw)
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 40px rgba(192,138,44, .32)
+    }
+
+    .btn-ghost {
+      background: #fff;
+      color: var(--navy);
+      border: 1.5px solid var(--line-b)
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--copper-lt);
+      color: var(--copper);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-sm)
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap
+    }
+
+    /* ======================== REVEAL ======================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .75s ease, transform .75s ease
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-28px);
+      transition: opacity .75s ease, transform .75s ease
+    }
+
+    .reveal-left.in {
+      opacity: 1;
+      transform: translateX(0)
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(28px);
+      transition: opacity .75s ease, transform .75s ease
+    }
+
+    .reveal-right.in {
+      opacity: 1;
+      transform: translateX(0)
+    }
+
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.92);
+      transition: opacity .7s ease, transform .7s ease
+    }
+
+    .reveal-scale.in {
+      opacity: 1;
+      transform: scale(1)
+    }
+
+    /* ======================== HERO ======================== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 12rem;
+      overflow: hidden
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 1
+    }
+
+    .hero-bg-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .28;
+      filter: saturate(.75)
+    }
+
+    .hero-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 65% 40%, rgba(192,138,44, .08) 0%, transparent 65%), linear-gradient(180deg, var(--bg) 0%, transparent 25%, transparent 75%, var(--bg) 100%), linear-gradient(90deg, var(--bg) 0%, transparent 45%)
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .7rem;
+      background: rgba(255, 255, 255, .9);
+      border: 1.5px solid var(--line-b);
+      backdrop-filter: blur(12px);
+      border-radius: 50px;
+      padding: .45rem 1.1rem .45rem .65rem;
+      margin-bottom: 1.8rem;
+      box-shadow: var(--shadow-sm)
+    }
+
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 8px rgba(34, 197, 94, .6);
+      animation: pulse-dot 2s ease-in-out infinite
+    }
+
+    @keyframes pulse-dot {
+
+      0%,
+      100% {
+        box-shadow: 0 0 8px rgba(34, 197, 94, .6)
+      }
+
+      50% {
+        box-shadow: 0 0 4px rgba(34, 197, 94, .3)
+      }
+    }
+
+    .hero-badge span {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted)
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+      line-height: 1.06
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      background: linear-gradient(135deg, var(--copper), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      padding: 0 .14em .06em 0
+    }
+
+    .hero p.lede {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 38em;
+      margin-bottom: 2.2rem;
+      line-height: 1.8
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.2rem;
+      margin-top: 2.8rem;
+      padding-top: 2rem;
+      border-top: 1.5px solid var(--line-b)
+    }
+
+    .hero-stat-num {
+      font-family: "Fraunces", serif;
+      font-size: 2rem;
+      font-weight: 500;
+      background: linear-gradient(135deg, var(--copper), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text
+    }
+
+    .hero-stat-label {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .7rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: .15rem
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .hero-img-frame {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg)
+    }
+
+    .hero-img-frame img {
+      width: 100%;
+      max-width: 520px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: var(--radius-lg)
+    }
+
+    .hero-img-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1.5px solid rgba(192,138,44, .2);
+      border-radius: var(--radius-lg);
+      pointer-events: none
+    }
+
+    .hero-network {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .hero-network svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 0 16px rgba(192,138,44, .25))
+    }
+
+    .node-label {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 13px;
+      letter-spacing: .06em;
+      fill: var(--muted);
+      font-weight: 500
+    }
+
+    .node-label.center {
+      fill: var(--navy);
+      font-size: 14px;
+      font-weight: 600
+    }
+
+    .pulse {
+      fill: var(--copper-lt)
+    }
+
+    .edge {
+      stroke: rgba(8,42,58, .1);
+      stroke-width: 1
+    }
+
+    .node-dot {
+      fill: #fff;
+      stroke: var(--copper-lt);
+      stroke-width: 1.5
+    }
+
+    .node-dot.center {
+      fill: var(--copper);
+      stroke: var(--gold);
+      stroke-width: 2
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+      animation: float-up 2.5s ease-in-out infinite
+    }
+
+    .scroll-hint span {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .65rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--muted)
+    }
+
+    .scroll-arrow {
+      width: 20px;
+      height: 32px;
+      border: 1.5px solid var(--line-b);
+      border-radius: 10px;
+      position: relative
+    }
+
+    .scroll-arrow::after {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 8px;
+      background: var(--copper-lt);
+      border-radius: 2px;
+      animation: scroll-dot 2s ease-in-out infinite
+    }
+
+    @keyframes scroll-dot {
+
+      0%,
+      100% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1
+      }
+
+      70% {
+        transform: translateX(-50%) translateY(10px);
+        opacity: 0
+      }
+    }
+
+    @keyframes float-up {
+
+      0%,
+      100% {
+        transform: translateX(-50%) translateY(0)
+      }
+
+      50% {
+        transform: translateX(-50%) translateY(-6px)
+      }
+    }
+
+    /* ======================== SECTIONS ======================== */
+    section {
+      padding: 8rem 0;
+      position: relative;
+      z-index: 1
+    }
+
+    section.alt {
+      background: var(--bg-alt)
+    }
+
+    .section-head {
+      max-width: 660px;
+      margin-bottom: 4rem
+    }
+
+    .section-head.centered {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center
+    }
+
+    .section-head.centered .eyebrow {
+      justify-content: center
+    }
+
+    .section-head h2 {
+      font-size: clamp(2rem, 3.5vw, 2.9rem);
+      margin-top: 1rem;
+      color: var(--navy)
+    }
+
+    .section-head p {
+      color: var(--muted);
+      margin-top: 1rem;
+      font-size: 1.02rem;
+      line-height: 1.75
+    }
+
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--line-b), transparent);
+      position: relative;
+      z-index: 1
+    }
+
+    /* ======================== WHO WE ARE ======================== */
+    .who-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center
+    }
+
+    .who-img-wrap {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg)
+    }
+
+    .who-img-wrap img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      transition: transform .8s ease
+    }
+
+    .who-img-wrap:hover img {
+      transform: scale(1.04)
+    }
+
+    .who-img-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1.5px solid rgba(192,138,44, .15);
+      border-radius: var(--radius-lg);
+      pointer-events: none
+    }
+
+    .who-img-badge {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      background: rgba(255, 255, 255, .92);
+      backdrop-filter: blur(16px);
+      border: 1.5px solid var(--line-b);
+      border-radius: var(--radius);
+      padding: 1rem 1.3rem;
+      box-shadow: var(--shadow-sm)
+    }
+
+    .who-img-badge strong {
+      font-family: "Fraunces", serif;
+      font-size: 1.5rem;
+      color: var(--copper);
+      display: block
+    }
+
+    .who-img-badge span {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .68rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted)
+    }
+
+    .who-text p {
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.8;
+      margin-bottom: 1.3rem
+    }
+
+    .big-quote {
+      font-family: "Fraunces", serif;
+      font-style: italic;
+      font-size: 1.4rem;
+      color: var(--navy);
+      line-height: 1.48;
+      padding: 1.8rem 2rem;
+      border-left: 3px solid;
+      border-image: linear-gradient(180deg, var(--copper), var(--gold)) 1;
+      background: linear-gradient(90deg, rgba(192,138,44, .05), transparent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin-top: 1.5rem
+    }
+
+    /* ======================== LEADERSHIP TEAM ======================== */
+    .leadership-area {
+      margin-top: 5rem;
+      padding-top: 4.5rem;
+      border-top: 1.5px solid var(--line);
+    }
+
+    .leadership-area .section-head {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .leadership-area .section-head h2 {
+      font-family: "Fraunces", serif;
+      font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+      color: var(--navy);
+      margin: 0.8rem 0 0.6rem;
+    }
+
+    .leadership-area .section-head p {
+      color: var(--muted);
+      font-size: 1.02rem;
+      max-width: 560px;
+      margin-inline: auto;
+    }
+
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.2rem;
+    }
+
+    .leader-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--line);
+      transition: transform var(--tr), box-shadow var(--tr);
+      position: relative;
+    }
+
+    .leader-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .leader-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--copper), var(--gold));
+      opacity: 0;
+      transition: opacity var(--tr);
+      z-index: 2;
+    }
+
+    .leader-card:hover::before {
+      opacity: 1;
+    }
+
+    .leader-photo-wrap {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #dbe5e9, #d4cbc0);
+    }
+
+    .leader-photo {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform .7s ease;
+    }
+
+    .leader-card:hover .leader-photo {
+      transform: scale(1.04);
+    }
+
+    .leader-photo-wrap::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.08) 60%, rgba(255, 255, 255, 0.5));
+      pointer-events: none;
+    }
+
+    .leader-info {
+      padding: 1.6rem 1.5rem 1.8rem;
+    }
+
+    .leader-name {
+      font-family: "Fraunces", serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.15rem;
+    }
+
+    .leader-meta {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .leader-role {
+      font-size: 0.86rem;
+      font-style: italic;
+      color: var(--copper);
+      margin-bottom: 1rem;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .leader-highlights {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .leader-highlights .tag {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
+      padding: 0.28rem 0.7rem;
+      border-radius: 100px;
+      background: var(--copper-gw);
+      color: var(--copper);
+      font-weight: 500;
+    }
+
+    .leader-details {
+      list-style: none;
+      padding: 0;
+    }
+
+    .leader-details li {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.55;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .leader-details li:last-child {
+      border-bottom: none;
+    }
+
+    .leader-details li strong {
+      color: var(--text);
+      font-weight: 500;
+      font-size: 0.78rem;
+    }
+
+    .leader-expand {
+      display: none;
+      padding-top: 0.5rem;
+    }
+
+    .leader-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.8rem;
+      background: none;
+      border: 1.5px solid var(--line-b);
+      border-radius: 100px;
+      color: var(--copper);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all var(--tr);
+      padding: 0.45rem 1.1rem;
+    }
+
+    .leader-toggle:hover {
+      background: var(--copper);
+      color: #fff;
+      border-color: var(--copper);
+    }
+
+    .leader-toggle .toggle-icon {
+      transition: transform var(--tr);
+      font-size: 0.65rem;
+    }
+
+    .leader-card.expanded .leader-expand {
+      display: block;
+      animation: leaderFadeIn 0.4s ease;
+    }
+
+    .leader-card.expanded .leader-toggle {
+      background: var(--copper);
+      color: #fff;
+      border-color: var(--copper);
+    }
+
+    .leader-card.expanded .toggle-icon {
+      transform: rotate(180deg);
+    }
+
+    @keyframes leaderFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .leader-prev-companies {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.8rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid var(--line);
+      line-height: 1.6;
+    }
+
+    .leader-prev-companies strong {
+      color: var(--text);
+      font-weight: 500;
+      font-size: 0.75rem;
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    /* ======================== VISION / MISSION — IMMERSIVE ======================== */
+    .vm-section {
+      padding: 0;
+      overflow: hidden
+    }
+
+    .vm-card-full {
+      position: relative;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      overflow: hidden
+    }
+
+    .vm-card-full+.vm-card-full {
+      border-top: 1px solid rgba(255, 255, 255, .06)
+    }
+
+    .vm-card-bg {
+      position: absolute;
+      inset: 0
+    }
+
+    .vm-card-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 2.5s ease
+    }
+
+    .vm-card-full:hover .vm-card-bg img {
+      transform: scale(1.06)
+    }
+
+    .vm-card-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1
+    }
+
+    .vm-card-full:nth-child(1) .vm-card-overlay {
+      background: linear-gradient(135deg, rgba(8,42,58, .88) 0%, rgba(11,60,82, .75) 40%, rgba(192,138,44, .2) 100%)
+    }
+
+    .vm-card-full:nth-child(2) .vm-card-overlay {
+      background: linear-gradient(225deg, rgba(8,42,58, .88) 0%, rgba(11,60,82, .75) 40%, rgba(192,138,44, .15) 100%)
+    }
+
+    .vm-card-content {
+      position: relative;
+      z-index: 2;
+      max-width: 620px;
+      padding: 5rem 5vw
+    }
+
+    .vm-card-full:nth-child(2) .vm-card-content {
+      margin-left: auto;
+      text-align: right
+    }
+
+    .vm-card-full:nth-child(2) .vm-card-content .eyebrow {
+      justify-content: flex-end
+    }
+
+    .vm-card-content .eyebrow {
+      color: var(--copper-lt);
+      margin-bottom: 1.2rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6)
+    }
+
+    .vm-card-content .eyebrow::before {
+      background: linear-gradient(90deg, var(--copper-lt), transparent)
+    }
+
+    .vm-card-content h3 {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: #fff;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+      text-shadow: 0 4px 32px rgba(0, 0, 0, 0.6)
+    }
+
+    .vm-card-content p {
+      font-family: "Work Sans", sans-serif;
+      font-weight: 400;
+      color: #fff;
+      font-size: 1.25rem;
+      line-height: 1.8;
+      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4)
+    }
+
+    .vm-card-decorline {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--copper), var(--gold), var(--copper));
+      z-index: 3;
+      opacity: .6
+    }
+
+    .vm-card-full:nth-child(2) .vm-card-decorline {
+      top: 0;
+      bottom: auto
+    }
+
+    .vm-card-icon-float {
+      position: absolute;
+      z-index: 2;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .08);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, .12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem
+    }
+
+    .vm-card-full:nth-child(1) .vm-card-icon-float {
+      right: 8%;
+      top: 50%;
+      transform: translateY(-50%)
+    }
+
+    .vm-card-full:nth-child(2) .vm-card-icon-float {
+      left: 8%;
+      top: 50%;
+      transform: translateY(-50%)
+    }
+
+    .vm-stat-row {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 2rem
+    }
+
+    .vm-card-full:nth-child(2) .vm-stat-row {
+      justify-content: flex-end
+    }
+
+    .vm-stat {
+      text-align: center
+    }
+
+    .vm-stat-num {
+      font-family: "Fraunces", serif;
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: var(--copper-lt)
+    }
+
+    .vm-stat-label {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .62rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .5);
+      margin-top: .2rem
+    }
+
+    /* ======================== VALUES — 4-CARD PREMIUM ======================== */
+    .values-section {
+      background: var(--bg);
+      position: relative;
+      overflow: hidden
+    }
+
+    .values-section::before {
+      content: "";
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(192,138,44, .06) 0%, transparent 70%);
+      pointer-events: none
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem
+    }
+
+    .value-card {
+      padding: 2.5rem 2rem;
+      background: var(--bg-card);
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+      transition: border-color var(--tr), transform var(--tr), box-shadow var(--tr);
+      text-align: center
+    }
+
+    .value-card:hover {
+      border-color: var(--copper-lt);
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg)
+    }
+
+    .value-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--copper), var(--gold));
+      transform: scaleX(0);
+      transition: transform .4s ease;
+      transform-origin: left
+    }
+
+    .value-card:hover::before {
+      transform: scaleX(1)
+    }
+
+    .value-card::after {
+      content: "";
+      position: absolute;
+      bottom: -60px;
+      right: -60px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(192,138,44, .06) 0%, transparent 70%);
+      pointer-events: none;
+      transition: opacity var(--tr)
+    }
+
+    .value-card:hover::after {
+      opacity: 1
+    }
+
+    .value-icon-wrap {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 1.5rem;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(192,138,44, .1), rgba(192,138,44, .06));
+      border: 1.5px solid rgba(192,138,44, .18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform var(--tr), box-shadow var(--tr)
+    }
+
+    .value-card:hover .value-icon-wrap {
+      transform: scale(1.08) rotate(-3deg);
+      box-shadow: 0 8px 24px var(--copper-gw)
+    }
+
+    .value-icon-wrap svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--copper);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round
+    }
+
+    .value-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: .8rem;
+      color: var(--navy)
+    }
+
+    .value-card p {
+      color: var(--muted);
+      font-size: .92rem;
+      line-height: 1.75
+    }
+
+    .value-num {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .6rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--copper-lt);
+      margin-bottom: 1rem;
+      display: block
+    }
+
+    /* ======================== SERVICES ======================== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--tr), box-shadow var(--tr), border-color var(--tr)
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(192,138,44, .3)
+    }
+
+    .service-img {
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      position: relative
+    }
+
+    .service-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .7s ease
+    }
+
+    .service-card:hover .service-img img {
+      transform: scale(1.08)
+    }
+
+    .service-img::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(255, 255, 255, .85) 100%)
+    }
+
+    .service-body {
+      padding: 1.8rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column
+    }
+
+    .service-index {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .68rem;
+      letter-spacing: .2em;
+      color: var(--copper-lt);
+      text-transform: uppercase;
+      margin-bottom: .6rem
+    }
+
+    .service-card h3 {
+      font-size: 1.2rem;
+      color: var(--navy);
+      margin-bottom: .7rem
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: .94rem;
+      line-height: 1.72;
+      flex: 1
+    }
+
+    .service-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      margin-top: 1.2rem;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .72rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--copper);
+      transition: gap var(--tr)
+    }
+
+    .service-card:hover .service-arrow {
+      gap: .75rem
+    }
+
+    .service-arrow svg {
+      width: 14px;
+      height: 14px
+    }
+
+    .service-card.wide {
+      grid-column: span 2;
+      flex-direction: row
+    }
+
+    .service-card.wide .service-img {
+      aspect-ratio: auto;
+      width: 42%;
+      flex-shrink: 0
+    }
+
+    .service-card.wide .service-img::after {
+      background: linear-gradient(90deg, transparent 60%, rgba(255, 255, 255, .9) 100%)
+    }
+
+    .service-card.wide .service-body {
+      padding: 2.4rem 2.6rem
+    }
+
+    /* ======================== WHY ======================== */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem
+    }
+
+    .why-card {
+      padding: 2.5rem;
+      background: var(--bg-card);
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--tr), transform var(--tr)
+    }
+
+    .why-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px)
+    }
+
+    .why-num {
+      font-family: "Fraunces", serif;
+      font-style: italic;
+      font-size: 2.8rem;
+      background: linear-gradient(135deg, var(--copper), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: .8;
+      line-height: 1;
+      margin-bottom: 1.1rem
+    }
+
+    .why-card h3 {
+      font-size: 1.2rem;
+      color: var(--navy);
+      margin-bottom: .8rem
+    }
+
+    .why-card p {
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.75
+    }
+
+    /* ======================== MARQUEE ======================== */
+    .marquee-section {
+      padding: 2rem 0;
+      background: var(--navy);
+      overflow: hidden;
+      border-top: 1px solid rgba(255, 255, 255, .06);
+      border-bottom: 1px solid rgba(255, 255, 255, .06)
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 3rem;
+      animation: marquee 26s linear infinite;
+      width: max-content
+    }
+
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .74rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .55);
+      white-space: nowrap
+    }
+
+    .marquee-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--copper-lt);
+      flex-shrink: 0
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0)
+      }
+
+      to {
+        transform: translateX(-50%)
+      }
+    }
+
+    /* ======================== CONTACT ======================== */
+    .contact-section {
+      background: var(--bg-alt);
+      position: relative
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start
+    }
+
+    .contact-left-h {
+      font-family: "Fraunces", serif;
+      font-weight: 500;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      color: var(--navy);
+      margin: 1rem 0 1.2rem;
+      line-height: 1.1;
+      letter-spacing: -.02em
+    }
+
+    .contact-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 1.3rem 1.5rem;
+      background: var(--bg-card);
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      transition: border-color var(--tr), transform var(--tr), box-shadow var(--tr)
+    }
+
+    .contact-card:hover {
+      border-color: var(--copper-lt);
+      transform: translateX(6px);
+      box-shadow: var(--shadow-md)
+    }
+
+    .contact-card-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, rgba(192,138,44, .12), rgba(192,138,44, .04));
+      border: 1.5px solid rgba(192,138,44, .2);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      flex-shrink: 0
+    }
+
+    .contact-card-label {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted)
+    }
+
+    .contact-card-value {
+      font-family: "Fraunces", serif;
+      font-size: 1.05rem;
+      color: var(--navy);
+      margin-top: .1rem
+    }
+
+    .contact-cta-block {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      text-align: center;
+      box-shadow: var(--shadow-lg)
+    }
+
+    .contact-cta-block h3 {
+      font-size: 1.8rem;
+      color: #fff;
+      margin-bottom: 1rem
+    }
+
+    .contact-cta-block p {
+      color: rgba(255, 255, 255, .65);
+      margin-bottom: 2rem;
+      line-height: 1.75
+    }
+
+    .contact-cta-block .btn-primary {
+      margin: 0 auto
+    }
+
+    /* ======================== CONTACT FORM ======================== */
+    .contact-form-card {
+      background: linear-gradient(145deg, var(--navy) 0%, #152737 100%);
+      border-radius: var(--radius-lg);
+      padding: clamp(2rem, 3.5vw, 2.75rem);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+    }
+
+    .contact-form-card .form-header {
+      margin-bottom: 1.6rem;
+    }
+
+    .contact-form-card .form-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(192,138,44, 0.16);
+      border: 1px solid rgba(192,138,44, 0.3);
+      border-radius: 50px;
+      padding: 0.35rem 0.85rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .contact-form-card .form-badge-logo {
+      height: 18px;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
+    .contact-form-card .form-badge span {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--copper-lt);
+      font-weight: 600;
+    }
+
+    .contact-form-card h3 {
+      font-size: clamp(1.5rem, 2.2vw, 1.95rem);
+      color: #fff;
+      margin-bottom: 0.45rem;
+      line-height: 1.2;
+    }
+
+    .contact-form-card .form-subtitle {
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.1rem;
+      margin-top: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    .form-group label {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 600;
+    }
+
+    .form-group label .req {
+      color: var(--copper-lt);
+      font-weight: 700;
+      margin-left: 2px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1.5px solid rgba(255, 255, 255, 0.14);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      color: #fff;
+      font-family: "Work Sans", sans-serif;
+      font-size: 0.92rem;
+      transition: border-color var(--tr), background var(--tr), box-shadow var(--tr);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--copper-lt);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 0 3px rgba(192,138,44, 0.22);
+    }
+
+    .select-wrap {
+      position: relative;
+    }
+
+    .select-wrap select {
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.7)' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+
+    .select-wrap select option {
+      background: #0f1e2c;
+      color: #fff;
+      padding: 8px 12px;
+    }
+
+    .select-wrap select option:disabled {
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .select-wrap select:has(option[value=""]:checked) {
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 105px;
+    }
+
+    .form-submit-btn {
+      width: 100%;
+      justify-content: center;
+      margin-top: 1.4rem;
+      font-size: 0.84rem;
+      padding: 0.95rem 1.8rem;
+      cursor: pointer;
+    }
+
+    .form-submit-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
+    .form-spinner {
+      display: none;
+      width: 15px;
+      height: 15px;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin-submit 0.7s linear infinite;
+    }
+
+    .form-submit-btn.loading .form-spinner {
+      display: inline-block;
+    }
+
+    .form-submit-btn.loading .btn-arrow {
+      display: none;
+    }
+
+    @keyframes spin-submit {
+      to { transform: rotate(360deg); }
+    }
+
+    .form-result {
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius);
+      margin-top: 1.2rem;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .form-result.success {
+      background: rgba(34, 197, 94, 0.12);
+      border: 1.5px solid rgba(34, 197, 94, 0.35);
+      color: #86efac;
+    }
+
+    .form-result.error {
+      background: rgba(239, 68, 68, 0.12);
+      border: 1.5px solid rgba(239, 68, 68, 0.35);
+      color: #fca5a5;
+    }
+
+    .form-result .result-icon {
+      font-size: 1.15rem;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .form-result strong {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      color: #fff;
+    }
+
+    .form-result p {
+      margin: 0;
+      font-size: 0.86rem;
+      opacity: 0.92;
+    }
+
+    .form-privacy-note {
+      margin-top: 1rem;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.02em;
+      color: rgba(255, 255, 255, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      text-align: center;
+    }
+
+    .phone-input-group {
+      display: flex;
+      gap: 0.65rem;
+      align-items: stretch;
+      width: 100%;
+    }
+
+    .phone-code-wrap {
+      flex: 0 0 100px;
+      min-width: 95px;
+      position: relative;
+    }
+
+    .phone-code-wrap select {
+      padding: 0.75rem 1.5rem 0.75rem 0.75rem;
+      font-size: 0.86rem;
+      background-position: right 0.5rem center;
+      cursor: pointer;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .phone-input-group input[type="tel"] {
+      flex: 1;
+      min-width: 0;
+    }
+
+    @media (max-width: 640px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .form-group.full-width {
+        grid-column: span 1;
+      }
+      .contact-form-card {
+        padding: 1.8rem 1.4rem;
+      }
+      .phone-code-wrap {
+        flex: 0 0 92px;
+        min-width: 88px;
+      }
+      .phone-code-wrap select {
+        padding-left: 0.55rem;
+        padding-right: 1.3rem;
+        font-size: 0.82rem;
+        background-position: right 0.35rem center;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .phone-code-wrap {
+        flex: 0 0 125px;
+        min-width: 110px;
+      }
+      .phone-code-wrap select {
+        padding-left: 0.5rem;
+        font-size: 0.78rem;
+      }
+    }
+
+    /* ======================== FOOTER ======================== */
+    footer {
+      padding: 4.5rem 0 3rem;
+      background: var(--navy);
+      border-top: 1px solid rgba(255, 255, 255, .06)
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem
+    }
+
+    .footer-brand p {
+      color: rgba(255, 255, 255, .5);
+      font-size: .92rem;
+      line-height: 1.8;
+      max-width: 26em;
+      margin-top: 1rem
+    }
+
+    .footer-brand .logo {
+      color: #fff
+    }
+
+    .footer-brand .amp {
+      color: var(--copper-lt)
+    }
+
+    .footer-col h4 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .7rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--copper-lt);
+      margin-bottom: 1.2rem
+    }
+
+    .footer-col ul {
+      list-style: none
+    }
+
+    .footer-col ul li {
+      margin-bottom: .7rem
+    }
+
+    .footer-col ul a {
+      color: rgba(255, 255, 255, .5);
+      font-size: .9rem;
+      transition: color var(--tr)
+    }
+
+    .footer-col ul a:hover {
+      color: #fff
+    }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, .07);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap
+    }
+
+    .footer-bottom mark {
+      background: none;
+      color: var(--copper-lt);
+      padding: 0
+    }
+
+    .footer-bottom p {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .72rem;
+      letter-spacing: .07em;
+      color: rgba(255, 255, 255, .4)
+    }
+
+    .footer-tagline {
+      font-family: "Fraunces", serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--copper-lt)
+    }
+
+    /* ======================== RESPONSIVE ======================== */
+    @media(max-width:900px) {
+      .navlinks {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: min(80vw, 340px);
+        background: rgba(250, 247, 242, .97);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 2rem;
+        padding: 2rem 2.8rem;
+        transform: translateX(110%);
+        transition: transform .4s cubic-bezier(.4, 0, .2, 1);
+        border-left: 1.5px solid var(--line-b);
+        box-shadow: -20px 0 60px rgba(8,42,58, .15)
+      }
+
+      .navlinks.open {
+        transform: translateX(0)
+      }
+
+      .nav-dropdown {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+      }
+
+      .nav-dropdown-trigger {
+        font-size: 1.05rem;
+        color: var(--navy);
+        padding: 0.3rem 0;
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .nav-dropdown-content {
+        display: none;
+        position: static;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        padding: 0.4rem 0 0.4rem 0.6rem;
+        margin-top: 0.5rem;
+        background: transparent;
+        min-width: 100%;
+        width: 100%;
+        gap: 0.5rem;
+        border: none;
+        border-left: 2px solid var(--copper-gw);
+      }
+
+      .nav-dropdown.open .nav-dropdown-content {
+        display: flex;
+      }
+
+      .country-item {
+        width: 100%;
+      }
+
+      .country-btn {
+        font-size: 0.95rem;
+        padding: 0.5rem 0.6rem;
+      }
+
+      @media (hover: none) {
+        .country-item:not(.open) .country-vendors {
+          display: none !important;
+        }
+      }
+
+      .country-vendors {
+        padding-left: 1.2rem;
+      }
+
+      .vendor-link {
+        font-size: 0.92rem !important;
+        padding: 0.4rem 0.5rem !important;
+      }
+
+      .navlinks a {
+        font-size: 1.05rem;
+        color: var(--navy)
+      }
+
+      .nav-cta {
+        margin-top: 1rem
+      }
+
+      .navmenu-toggle {
+        display: flex
+      }
+
+      header .logo img {
+        height: 52px;
+      }
+
+      header.scrolled .logo img {
+        height: 36px;
+      }
+
+      header.scrolled .logo-text-block .logo-main-name {
+        font-size: 0.9rem;
+      }
+
+      .hero-grid,
+      .who-grid,
+      .why-grid,
+      .contact-inner {
+        grid-template-columns: 1fr
+      }
+
+      .hero-visual {
+        margin-top: 3rem;
+        max-width: 380px;
+        margin-inline: auto
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr
+      }
+
+      .service-card.wide {
+        flex-direction: column;
+        grid-column: span 1
+      }
+
+      .service-card.wide .service-img {
+        width: 100%;
+        aspect-ratio: 16/9
+      }
+
+      .service-card.wide .service-img::after {
+        background: linear-gradient(180deg, transparent 50%, rgba(255, 255, 255, .85) 100%)
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .vm-card-full {
+        min-height: 420px
+      }
+
+      .vm-card-full:nth-child(2) .vm-card-content {
+        margin-left: 0;
+        text-align: left
+      }
+
+      .vm-card-full:nth-child(2) .vm-card-overlay {
+        background: linear-gradient(135deg, rgba(8,42,58, .88) 0%, rgba(11,60,82, .75) 50%, rgba(192,138,44, .2) 100%)
+      }
+
+      .vm-card-full:nth-child(2) .vm-card-content .eyebrow {
+        justify-content: flex-start
+      }
+
+      .vm-card-full:nth-child(2) .vm-stat-row {
+        justify-content: flex-start
+      }
+
+      .vm-card-icon-float {
+        display: none
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center
+      }
+
+      section {
+        padding: 5.5rem 0
+      }
+    }
+
+    @media(max-width:560px) {
+      .hero h1 {
+        font-size: 2.5rem
+      }
+
+      .hero-stats {
+        flex-wrap: wrap;
+        gap: 1.5rem
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr
+      }
+
+      .vm-card-content {
+        padding: 3rem 5vw
+      }
+
+      .vm-stat-row {
+        flex-wrap: wrap;
+        gap: 1.5rem
+      }
+    }
+
+    @media (max-width: 900px) {
+      .leadership-grid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+        margin-inline: auto;
+      }
+
+      .leadership-area {
+        margin-top: 3.5rem;
+        padding-top: 3rem;
+      }
+    }
+
+    /* ======================== PRELOADER ======================== */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      background: #f7fafb;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+    #preloader.hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loader-logo {
+      width: 280px;
+      animation: pulse-loader 1.2s infinite alternate ease-in-out;
+    }
+
+    @keyframes pulse-loader {
+      0% {
+        transform: scale(0.92);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: scale(1.08);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PRELOADER -->
+  <div id="preloader">
+    <img src="images/mp-logo-full.svg" alt="Mastery &amp; Precise" class="loader-logo">
+  </div>
+
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- HEADER -->
+  <header id="site-header">
+    <nav class="wrap">
+      <a href="#top" class="logo"
+        style="padding: 0.2rem 0; flex-direction: row; align-items: center; gap: 0.7rem; text-decoration: none;">
+        <img src="images/mp-mark.svg" alt="Mastery &amp; Precise logo">
+        <span class="logo-text-block"
+          style="display: flex; flex-direction: column; align-items: flex-start; line-height: 1.15;">
+          <span class="logo-main-name"
+            style="font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.15rem; color: var(--navy); letter-spacing: 0.04em; white-space: nowrap; transition: font-size var(--tr);">MASTERY
+            &amp; PRECISE</span>
+          <span class="logo-sub"
+            style="display: flex; align-items: center; gap: 0.35rem; white-space: nowrap; transition: opacity var(--tr);">
+            <span style="height: 1px; width: 18px; background: linear-gradient(90deg, transparent, #C08A2C);"></span>
+            <span
+              style="font-family: 'Space Grotesk', sans-serif; font-size: 0.48rem; letter-spacing: 0.18em; text-transform: uppercase; color: #C08A2C; font-weight: 600;">Business
+              House Private Limited</span>
+            <span style="height: 1px; width: 18px; background: linear-gradient(90deg, #C08A2C, transparent);"></span>
+          </span>
+          <span class="logo-tagline"
+            style="font-family: 'Space Grotesk', sans-serif; font-size: 0.4rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--navy); opacity: 0.6; white-space: nowrap; transition: opacity var(--tr);">Mastery
+            in Vision. Precise in Action.</span>
+        </span>
+      </a>
+      <button class="navmenu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="navlinks" id="navlinks">
+        <a href="#who">Who We Are</a>
+        <a href="#vision">Vision &amp; Mission</a>
+        <a href="#services">Services</a>
+        <a href="#why">Why Us</a>
+        <div class="nav-dropdown" id="vendorsDropdown">
+          <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+            <span>Our Ventures</span>
+            <span class="caret">▾</span>
+          </button>
+          <div class="nav-dropdown-content" role="menu" aria-label="Our Ventures by Country">
+            <!-- 1. Saudi Arabia -->
+            <div class="country-item" data-country="sa">
+              <button type="button" class="country-btn" aria-expanded="false">
+                <span class="country-name">Saudi Arabia</span>
+                <span class="country-arrow">&#9656;</span>
+              </button>
+              <div class="country-vendors">
+                <a href="https://curved-progress-bar.vercel.app/" class="vendor-link">
+                  <span class="vendor-bullet">&rarr;</span>
+                  <span>KNC</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- 2. UK -->
+            <div class="country-item" data-country="uk">
+              <button type="button" class="country-btn" aria-expanded="false">
+                <span class="country-name">United Kingdom</span>
+                <span class="country-arrow">&#9656;</span>
+              </button>
+              <div class="country-vendors">
+                <span class="vendor-empty">No ventures available</span>
+              </div>
+            </div>
+
+            <!-- 3. USA -->
+            <div class="country-item" data-country="us">
+              <button type="button" class="country-btn" aria-expanded="false">
+                <span class="country-name">USA</span>
+                <span class="country-arrow">&#9656;</span>
+              </button>
+              <div class="country-vendors">
+                <span class="vendor-empty">No ventures available</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#contact" class="nav-cta">Contact Us</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-bg">
+      <img src="images/hero_light.png" alt="" class="hero-bg-img" aria-hidden="true">
+    </div>
+    <div class="hero-content wrap">
+      <div class="hero-grid">
+        <div>
+          <h1>Connecting <em>purpose</em><br>with progress.</h1>
+          <p class="lede"><mark>Mastery &amp; Precise Business House</mark> is a multidisciplinary consulting
+            organization helping
+            businesses achieve sustainable growth through strategic advisory, operational excellence, digital
+            transformation, and professional development.</p>
+          <div class="cta-row">
+            <a href="#contact" class="btn btn-primary">
+              Start a Conversation
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="#services" class="btn btn-ghost">Explore Services</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <div class="hero-stat-num"><span class="counter-val" data-target="5">0</span>+</div>
+              <div class="hero-stat-label">Industry Sectors</div>
+            </div>
+            <div>
+              <div class="hero-stat-num"><span class="counter-val" data-target="360">0</span>&deg;</div>
+              <div class="hero-stat-label">Business Solutions</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">&infin;</div>
+              <div class="hero-stat-label">Growth Potential</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-img-frame">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000"
+              alt="Clean and professional corporate building" loading="eager">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true">
+      <div class="scroll-arrow"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Business Consultancy
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Supply Chain
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Corporate Governance
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Healthcare Advisory
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>EdTech Services
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Industrial Services
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Trade Solutions
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Strategic Growth
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Business Consultancy
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Supply Chain
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Corporate Governance
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Healthcare Advisory
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>EdTech Services
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Industrial Services
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Trade Solutions
+      </div>
+      <div class="marquee-item">
+        <div class="marquee-dot"></div>Strategic Growth
+      </div>
+    </div>
+  </div>
+
+  <!-- WHO WE ARE -->
+  <section id="who">
+    <div class="wrap">
+      <div class="who-grid">
+        <div class="reveal-left">
+          <div class="who-img-wrap">
+            <img src="images/campaign_about_team_1789559418046.jpg" alt="Campaign mascot leading a team, symbolizing teamwork and strategy"
+              loading="lazy">
+            <div class="who-img-badge">
+              <strong>2024</strong>
+              <span>Est. &middot; India</span>
+            </div>
+          </div>
+        </div>
+        <div class="who-text reveal-right">
+          <span class="eyebrow">Who We Are</span>
+          <h2 style="font-size:clamp(2rem,3.2vw,2.7rem);margin:1rem 0 1.5rem;color:var(--navy)">A partner across every
+            stage of growth.</h2>
+          <p>Our experienced consultants combine deep industry expertise with innovative thinking to deliver measurable
+            business outcomes across multiple sectors &mdash; from logistics and healthcare to industrial services,
+            trade, and business advisory.</p>
+          <p>At <mark>Mastery &amp; Precise</mark>, our strength lies in our people: a diverse team of professionals,
+            industry
+            experts, consultants, and strategic advisors who work collaboratively with clients to understand their
+            challenges, identify opportunities, and implement practical strategies for sustainable growth.</p>
+          <blockquote class="big-quote">&ldquo;Our people are our greatest asset. Through expertise, integrity, and
+            collaboration, we help organizations transform challenges into opportunities.&rdquo;</blockquote>
+        </div>
+      </div>
+
+      <!-- LEADERSHIP TEAM -->
+      <div class="leadership-area">
+        <div class="section-head centered reveal">
+          <span class="eyebrow">Our People</span>
+          <h2>Leadership Team</h2>
+          <p>Seasoned professionals driving strategic growth across logistics, supply chain, and business operations.
+          </p>
+        </div>
+
+        <div class="leadership-grid">
+          <!-- Dr. Afzal Aziz -->
+          <div class="leader-card reveal">
+            <div class="leader-photo-wrap">
+              <img class="leader-photo" src="images/team_afzal.png"
+                alt="Dr. Afzal Aziz - Global Logistics & Freight Forwarding Executive" loading="lazy">
+            </div>
+            <div class="leader-info">
+              <h3 class="leader-name">Dr. Afzal Aziz</h3>
+              <div class="leader-meta"></div>
+              <div class="leader-role">Global Logistics &amp; Freight Forwarding Executive</div>
+              <div class="leader-highlights">
+                <span class="tag">23+ Yrs Experience</span>
+                <span class="tag">Doctorate</span>
+                <span class="tag">MBA (UK)</span>
+              </div>
+              <ul class="leader-details">
+                <li><strong>Education &mdash;</strong> Doctorate in Strategic Supply Chain Leadership (Dunster Business
+                  School, Switzerland); Integrated Doctorate in Management (UCAM, Spain); MBA (Plymouth University, UK);
+                  B.Com (University of Calicut, India)</li>
+                <li><strong>Strengths &mdash;</strong> Strategic leadership, commercial acumen, data-driven
+                  decision-making, stakeholder management, high performance team building</li>
+              </ul>
+              <div class="leader-expand">
+                <ul class="leader-details">
+                  <li><strong>Skills &mdash;</strong> B2B &amp; B2C business strategy, pricing and P&amp;L ownership,
+                    negotiation, project management, operations optimization, KPI design, change management, customer
+                    relationship management</li>
+                  <li><strong>Languages &mdash;</strong> English, Arabic, Hindi, Malayalam, and Tamil</li>
+                </ul>
+                <div class="leader-prev-companies">
+                  <strong>Previous Companies</strong>
+                  MSC, TNT Express, Rajab Logistics, FedEx, Starlinks &amp; Naqel Express
+                </div>
+              </div>
+              <button class="leader-toggle" onclick="this.closest('.leader-card').classList.toggle('expanded')">
+                <span class="toggle-text">View Full Profile</span>
+                <span class="toggle-icon">&#9660;</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Arun Nelli -->
+          <div class="leader-card reveal">
+            <div class="leader-photo-wrap">
+              <img class="leader-photo" src="images/team_arun.png"
+                alt="Arun Nelli - Supply Chain & Inventory Management Specialist" loading="lazy">
+            </div>
+            <div class="leader-info">
+              <h3 class="leader-name">Arun Nelli</h3>
+              <div class="leader-meta"></div>
+              <div class="leader-role">Supply Chain &amp; Inventory Management Specialist</div>
+              <div class="leader-highlights">
+                <span class="tag">15+ Yrs Experience</span>
+                <span class="tag">B.Com</span>
+                <span class="tag">Warehouse Ops</span>
+              </div>
+              <ul class="leader-details">
+                <li><strong>Education &mdash;</strong> Bachelors in Commerce, Shobhit University, India</li>
+                <li><strong>Strengths &mdash;</strong> Hands-on operational leadership, process design and optimization,
+                  analytical inventory control, adaptability, and people management in warehouse and fleet environments
+                </li>
+              </ul>
+              <div class="leader-expand">
+                <ul class="leader-details">
+                  <li><strong>Skills &mdash;</strong> Inventory management, warehousing, retail logistics, transport and
+                    fleet coordination, supply merchandising, reporting and KPI dashboards, problem solving in supply
+                    chain, MS Office and related tools</li>
+                  <li><strong>Languages &mdash;</strong> English, Arabic, Hindi, Malayalam, Tamil &amp; Kannada</li>
+                </ul>
+                <div class="leader-prev-companies">
+                  <strong>Previous Companies</strong>
+                  Majid Al Futtaim, Al Mutlaq Co., Grace Engineering, SIEMENS, Dias &amp; Associates
+                </div>
+              </div>
+              <button class="leader-toggle" onclick="this.closest('.leader-card').classList.toggle('expanded')">
+                <span class="toggle-text">View Full Profile</span>
+                <span class="toggle-icon">&#9660;</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Nisar Kondadan -->
+          <div class="leader-card reveal">
+            <div class="leader-photo-wrap">
+              <img class="leader-photo" src="images/team_nisar.png"
+                alt="Nisar Kondadan - Operations, Sales & Marketing Leader" loading="lazy">
+            </div>
+            <div class="leader-info">
+              <h3 class="leader-name">Nisar Kondadan</h3>
+              <div class="leader-meta"></div>
+              <div class="leader-role">Operations / Sales &amp; Marketing Leader</div>
+              <div class="leader-highlights">
+                <span class="tag">12+ Yrs Experience</span>
+                <span class="tag">M.Sc. Psychology</span>
+                <span class="tag">M. Ed. &amp; B.Ed.</span>
+              </div>
+              <ul class="leader-details">
+                <li><strong>Education &mdash;</strong> M.Sc. Psychology (Annamalai University, Chidambaram); M.A.
+                  Economics (Annamalai University); M.Ed. &amp; B.Ed. Social Science (MG / Calicut University); B.A.
+                  Economics (Calicut University)</li>
+                <li><strong>Strengths &mdash;</strong> End-to-end Marketing Strategy, Operational Efficiency, and
+                  Collaborative Partnerships</li>
+              </ul>
+              <div class="leader-expand">
+                <ul class="leader-details">
+                  <li><strong>Skills &mdash;</strong> Project sales and marketing, digital campaigns, tender and bid
+                    management, client onboarding, logistics coordination, stakeholder communication, team training and
+                    mentoring</li>
+                  <li><strong>Languages &mdash;</strong> English, Arabic, Hindi and Malayalam</li>
+                </ul>
+                <div class="leader-prev-companies">
+                  <strong>Previous Companies</strong>
+                  Al Mutlaq Co., Saudi GINTL, Arabian Innovation, Setilas OU &amp; Globe Link West Star Shipping Co.
+                </div>
+              </div>
+              <button class="leader-toggle" onclick="this.closest('.leader-card').classList.toggle('expanded')">
+                <span class="toggle-text">View Full Profile</span>
+                <span class="toggle-icon">&#9660;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- VISION & MISSION — IMMERSIVE FULL-WIDTH -->
+  <section class="vm-section" id="vision">
+    <div class="section-head centered reveal" style="padding:5rem 5vw 0">
+      <span class="eyebrow">Company Vision &amp; Mission</span>
+      <h2>Building lasting value, deliberately.</h2>
+      <p>We exist to create meaningful, measurable impact for every stakeholder we serve &mdash; from clients to
+        communities.</p>
+    </div>
+
+    <!-- VISION CARD -->
+    <div class="vm-card-full reveal-left">
+      <div class="vm-card-bg">
+        <img src="images/vision.png" alt="Global vision — city skyline at golden hour" loading="lazy">
+      </div>
+      <div class="vm-card-overlay"></div>
+      <div class="vm-card-content">
+        <span class="eyebrow">Our Vision</span>
+        <h3>A globally recognized group.</h3>
+        <p>To become a globally recognized diversified holding group, delivering integrated and innovative solutions
+          across logistics, healthcare, industrial services, trade, and business advisory &mdash; creating lasting value
+          for stakeholders and contributing to sustainable economic progress across the markets we serve.</p>
+        <div class="vm-stat-row">
+          <div class="vm-stat">
+            <div class="vm-stat-num"><span class="counter-val" data-target="5">0</span>+</div>
+            <div class="vm-stat-label">Sectors</div>
+          </div>
+          <div class="vm-stat">
+            <div class="vm-stat-num">Global</div>
+            <div class="vm-stat-label">Ambition</div>
+          </div>
+          <div class="vm-stat">
+            <div class="vm-stat-num">&infin;</div>
+            <div class="vm-stat-label">Impact</div>
+          </div>
+        </div>
+      </div>
+      <div class="vm-card-decorline"></div>
+    </div>
+
+    <!-- MISSION CARD -->
+    <div class="vm-card-full reveal-right">
+      <div class="vm-card-bg">
+        <img src="images/campaign_mission_1789559434109.jpg" alt="Campaign mascot planting a flag on a peak, symbolizing mission and purpose" loading="lazy">
+      </div>
+      <div class="vm-card-overlay"></div>
+      <div class="vm-card-content">
+        <span class="eyebrow">Our Mission</span>
+        <h3>Integrated, value-driven solutions.</h3>
+        <p>To deliver integrated, innovative, and value-driven solutions across our diverse portfolio of businesses by
+          fostering excellence, embracing technology, developing exceptional talent, and building strategic partnerships
+          &mdash; empowering our clients and creating sustainable value for our stakeholders.</p>
+        <div class="vm-stat-row">
+          <div class="vm-stat">
+            <div class="vm-stat-num"><span class="counter-val" data-target="360">0</span>&deg;</div>
+            <div class="vm-stat-label">Solutions</div>
+          </div>
+          <div class="vm-stat">
+            <div class="vm-stat-num"><span class="counter-val" data-target="100">0</span>%</div>
+            <div class="vm-stat-label">Commitment</div>
+          </div>
+          <div class="vm-stat">
+            <div class="vm-stat-num">24/7</div>
+            <div class="vm-stat-label">Support</div>
+          </div>
+        </div>
+      </div>
+      <div class="vm-card-decorline"></div>
+    </div>
+  </section>
+
+  <!-- CORE VALUES — 4 CARDS -->
+  <section class="values-section" id="values">
+    <div class="wrap">
+      <div class="section-head centered reveal">
+        <span class="eyebrow">Core Values</span>
+        <h2>What guides every decision we make.</h2>
+        <p>Our values are the bedrock of every relationship we build and every solution we deliver.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card reveal">
+          <span class="value-num">01</span>
+          <div class="value-icon-wrap">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <h3>Integrity</h3>
+          <p>We uphold the highest standards of honesty, transparency, and ethical conduct in every decision and
+            relationship we build.</p>
+        </div>
+        <div class="value-card reveal">
+          <span class="value-num">02</span>
+          <div class="value-icon-wrap">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" />
+              <path d="M2 17l10 5 10-5" />
+              <path d="M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          <h3>Excellence</h3>
+          <p>We strive for excellence in everything we do, delivering superior quality, operational efficiency, and
+            outstanding results.</p>
+        </div>
+        <div class="value-card reveal">
+          <span class="value-num">03</span>
+          <div class="value-icon-wrap">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+              <line x1="9" y1="9" x2="9.01" y2="9" />
+              <line x1="15" y1="9" x2="15.01" y2="9" />
+            </svg>
+          </div>
+          <h3>Innovation</h3>
+          <p>We embrace creativity, technology, and continuous improvement to develop forward-thinking solutions that
+            create lasting value.</p>
+        </div>
+        <div class="value-card reveal">
+          <span class="value-num">04</span>
+          <div class="value-icon-wrap">
+            <svg viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <h3>Responsibility</h3>
+          <p>We conduct our business responsibly for the benefit of our stakeholders, communities, and the sustainable
+            future we all share.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- SERVICES -->
+  <section class="alt" id="services">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">What We Do</span>
+        <h2>Our Services</h2>
+        <p>End-to-end solutions designed for businesses at every stage of their growth journey.</p>
+      </div>
+      <div class="services-grid">
+        <!-- Wide featured card -->
+        <div class="service-card wide reveal">
+          <div class="service-img">
+            <img src="images/campaign_consultancy_1789559452426.jpg" alt="Campaign mascot with a 3D chart, symbolizing business consultancy" loading="lazy">
+          </div>
+          <div class="service-body">
+            <div class="service-index">01</div>
+            <h3>Business Consultancy</h3>
+            <p>Strategic advisory that turns your vision into a workable plan for sustainable growth. We partner with
+              leadership teams to diagnose challenges, design solutions, and execute strategies that deliver lasting
+              competitive advantage across every market you operate in.</p>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-img">
+            <img src="images/service_logistics.png" alt="Supply chain logistics" loading="lazy">
+          </div>
+          <div class="service-body">
+            <div class="service-index">02</div>
+            <h3>Supply Chain Services</h3>
+            <p>End-to-end logistics and supply chain solutions built for reliability at global scale &mdash; optimized
+              for speed, resilience, and cost efficiency.</p>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-img">
+            <img src="images/campaign_governance_1789559486198.jpg" alt="Campaign mascot holding a scale, symbolizing corporate governance" loading="lazy">
+          </div>
+          <div class="service-body">
+            <div class="service-index">03</div>
+            <h3>Corporate Governance</h3>
+            <p>Robust frameworks and oversight that keep organizations accountable, transparent, and resilient in the
+              face of evolving regulatory environments.</p>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-img">
+            <img src="images/campaign_excellence_1789559501961.jpg" alt="Campaign mascot polishing a star on a podium, symbolizing business excellence" loading="lazy">
+          </div>
+          <div class="service-body">
+            <div class="service-index">04</div>
+            <h3>Business Excellence</h3>
+            <p>Operational improvement programs focused on quality, efficiency, and measurable results that transform
+              how organizations perform.</p>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-img">
+              <img src="images/campaign_edtech.png" alt="Campaign mascot interacting with digital screens, symbolizing EdTech" loading="lazy">
+          </div>
+          <div class="service-body">
+            <div class="service-index">05</div>
+            <h3>EdTech Services</h3>
+            <p>Technology-driven learning and development solutions that cultivate exceptional talent and create agile,
+              future-ready organizations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section id="why">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Why Choose Us</span>
+        <h2>A strategic business partner you can trust.</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-num">01</div>
+          <h3>Strategic Partnership</h3>
+          <p>We go beyond consulting by partnering with our clients to understand their vision, overcome challenges, and
+            achieve sustainable business growth at every level.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-num">02</div>
+          <h3>Industry Expertise</h3>
+          <p>Our team brings extensive practical experience across diverse industries, combining strategic insight with
+            deep operational excellence and market intelligence.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-num">03</div>
+          <h3>Innovation-Driven</h3>
+          <p>We leverage modern technologies, data-driven strategies, and global best practices to help organizations
+            stay competitive and future-ready.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="wrap">
+      <div class="contact-inner">
+        <div class="reveal-left">
+          <span class="eyebrow">Contact Us</span>
+          <h2 class="contact-left-h">Together, we can<br><em style="font-style:italic;color:var(--copper-lt)">achieve
+              more.</em></h2>
+          <p style="color:var(--muted);line-height:1.8">Ready to transform your business? Our team of experts is here to
+            help you navigate complex challenges and unlock sustainable growth opportunities.</p>
+          <div class="contact-cards">
+            <a href="tel:+919633253192" class="contact-card">
+              <div class="contact-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B8802A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div>
+              <div>
+                <div class="contact-card-label">Phone</div>
+                <div class="contact-card-value">+91 96332 53192</div>
+              </div>
+            </a>
+            <a href="mailto:info@masteryandprecise.com" class="contact-card">
+              <div class="contact-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B8802A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+              <div>
+                <div class="contact-card-label">Email</div>
+                <div class="contact-card-value">info@masteryandprecise.com</div>
+              </div>
+            </a>
+            <a href="https://www.masteryandprecise.com" target="_blank" rel="noopener" class="contact-card">
+              <div class="contact-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B8802A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+              <div>
+                <div class="contact-card-label">Website</div>
+                <div class="contact-card-value">www.masteryandprecise.com</div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="contact-form-card reveal-right">
+          <div class="form-header">
+            <div class="form-badge">
+              <img src="images/mp-mark.svg" alt="Mastery &amp; Precise logo" width="36" height="35" loading="lazy" class="form-badge-logo">
+              <span>Business Inquiry</span>
+            </div>
+            <h3>Connect with Our Advisory Team</h3>
+            <p class="form-subtitle">Submit your organization&rsquo;s requirements and our strategic specialists will connect with you promptly.</p>
+          </div>
+
+          <form id="mp-inquiry-form" action="https://api.web3forms.com/submit" method="POST">
+            <!-- Web3Forms Access Key & Configuration -->
+            <input type="hidden" name="access_key" value="c72d8fc7-1f58-42e2-8d38-35ee2857f7a7">
+            <input type="hidden" name="subject" value="New Business Inquiry — Mastery &amp; Precise Business House">
+            <input type="hidden" name="from_name" value="Mastery &amp; Precise Business House">
+            <!-- Spam Honeypot -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+            <div class="form-grid">
+              <!-- Full Name -->
+              <div class="form-group">
+                <label for="form-name">Full Name <span class="req">*</span></label>
+                <input type="text" id="form-name" name="name" required autocomplete="name">
+              </div>
+
+              <!-- Company Name -->
+              <div class="form-group">
+                <label for="form-company">Company Name</label>
+                <input type="text" id="form-company" name="company" autocomplete="organization">
+              </div>
+
+              <!-- Business Email -->
+              <div class="form-group">
+                <label for="form-email">Business Email <span class="req">*</span></label>
+                <input type="email" id="form-email" name="email" required autocomplete="email">
+              </div>
+
+              <!-- Country -->
+              <div class="form-group">
+                <label for="form-country">Country</label>
+                <div class="select-wrap">
+                  <select id="form-country" name="country">
+                    <option value="" disabled selected>Select Country</option>
+                    <option value="Afghanistan">Afghanistan</option>
+                    <option value="Albania">Albania</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Armenia">Armenia</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Austria">Austria</option>
+                    <option value="Azerbaijan">Azerbaijan</option>
+                    <option value="Bahrain">Bahrain</option>
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value="Belgium">Belgium</option>
+                    <option value="Brazil">Brazil</option>
+                    <option value="Bulgaria">Bulgaria</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Chile">Chile</option>
+                    <option value="China">China</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Croatia">Croatia</option>
+                    <option value="Cyprus">Cyprus</option>
+                    <option value="Czech Republic">Czech Republic</option>
+                    <option value="Denmark">Denmark</option>
+                    <option value="Egypt">Egypt</option>
+                    <option value="Estonia">Estonia</option>
+                    <option value="Finland">Finland</option>
+                    <option value="France">France</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Ghana">Ghana</option>
+                    <option value="Greece">Greece</option>
+                    <option value="Hong Kong">Hong Kong</option>
+                    <option value="Hungary">Hungary</option>
+                    <option value="Iceland">Iceland</option>
+                    <option value="India">India</option>
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="Iran">Iran</option>
+                    <option value="Iraq">Iraq</option>
+                    <option value="Ireland">Ireland</option>
+                    <option value="Italy">Italy</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Jordan">Jordan</option>
+                    <option value="Kazakhstan">Kazakhstan</option>
+                    <option value="Kenya">Kenya</option>
+                    <option value="Kuwait">Kuwait</option>
+                    <option value="Lebanon">Lebanon</option>
+                    <option value="Luxembourg">Luxembourg</option>
+                    <option value="Malaysia">Malaysia</option>
+                    <option value="Maldives">Maldives</option>
+                    <option value="Mauritius">Mauritius</option>
+                    <option value="Mexico">Mexico</option>
+                    <option value="Morocco">Morocco</option>
+                    <option value="Nepal">Nepal</option>
+                    <option value="Netherlands">Netherlands</option>
+                    <option value="New Zealand">New Zealand</option>
+                    <option value="Nigeria">Nigeria</option>
+                    <option value="Norway">Norway</option>
+                    <option value="Oman">Oman</option>
+                    <option value="Pakistan">Pakistan</option>
+                    <option value="Peru">Peru</option>
+                    <option value="Philippines">Philippines</option>
+                    <option value="Poland">Poland</option>
+                    <option value="Portugal">Portugal</option>
+                    <option value="Qatar">Qatar</option>
+                    <option value="Romania">Romania</option>
+                    <option value="Russia">Russia</option>
+                    <option value="Saudi Arabia">Saudi Arabia</option>
+                    <option value="Serbia">Serbia</option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="Slovakia">Slovakia</option>
+                    <option value="South Africa">South Africa</option>
+                    <option value="South Korea">South Korea</option>
+                    <option value="Spain">Spain</option>
+                    <option value="Sri Lanka">Sri Lanka</option>
+                    <option value="Sweden">Sweden</option>
+                    <option value="Switzerland">Switzerland</option>
+                    <option value="Taiwan">Taiwan</option>
+                    <option value="Thailand">Thailand</option>
+                    <option value="Turkey">Turkey</option>
+                    <option value="Ukraine">Ukraine</option>
+                    <option value="United Arab Emirates">United Arab Emirates</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="United States">United States</option>
+                    <option value="Uruguay">Uruguay</option>
+                    <option value="Uzbekistan">Uzbekistan</option>
+                    <option value="Vietnam">Vietnam</option>
+                    <option value="Yemen">Yemen</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div id="other-country-wrap" style="display: none; margin-top: 0.5rem;">
+                  <input type="text" id="form-other-country" name="other_country">
+                </div>
+              </div>
+
+              <!-- Phone / WhatsApp with Country Selector -->
+              <div class="form-group full-width">
+                <label for="form-phone">Phone / WhatsApp</label>
+                <div class="phone-input-group">
+                  <div class="select-wrap phone-code-wrap">
+                    <select id="form-country-code" name="country_code" aria-label="Country Calling Code">
+                      <option value="+91" selected>🇮🇳 +91</option>
+                      <option value="+1">🇺🇸 +1</option>
+                      <option value="+966">🇸🇦 +966</option>
+                      <option value="+971">🇦🇪 +971</option>
+                      <option value="+974">🇶🇦 +974</option>
+                      <option value="+968">🇴🇲 +968</option>
+                      <option value="+965">🇰🇼 +965</option>
+                      <option value="+973">🇧🇭 +973</option>
+                      <option value="+44">🇬🇧 +44</option>
+                      <option value="+65">🇸🇬 +65</option>
+                      <option value="+1">🇨🇦 +1</option>
+                      <option value="+61">🇦🇺 +61</option>
+                      <option value="+49">🇩🇪 +49</option>
+                      <option value="+33">🇫🇷 +33</option>
+                      <option value="+20">🇪🇬 +20</option>
+                      <option value="+86">🇨🇳 +86</option>
+                      <option value="+81">🇯🇵 +81</option>
+                      <option value="+">🌐 +</option>
+                    </select>
+                  </div>
+                  <input type="tel" id="form-phone" name="phone" autocomplete="tel-national">
+                </div>
+              </div>
+
+              <!-- Subject / Inquiry Type -->
+              <div class="form-group full-width">
+                <label for="form-inquiry-type">Inquiry Type <span class="req">*</span></label>
+                <div class="select-wrap">
+                  <select id="form-inquiry-type" name="inquiry_type" required>
+                    <option value="" disabled selected>Select Inquiry Type *</option>
+                    <option value="General Business Inquiry">General Business Inquiry</option>
+                    <option value="Business Services">Business Services</option>
+                    <option value="Partnership / Collaboration">Partnership / Collaboration</option>
+                    <option value="Corporate Inquiry">Corporate Inquiry</option>
+                    <option value="Consultation">Consultation</option>
+                    <option value="Vendor / Supplier Inquiry">Vendor / Supplier Inquiry</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Message / Requirement -->
+              <div class="form-group full-width">
+                <label for="form-message">Message / Requirement <span class="req">*</span></label>
+                <textarea id="form-message" name="message" rows="4" required></textarea>
+              </div>
+            </div>
+
+            <!-- Form Status / Result Alert -->
+            <div id="form-result" class="form-result" role="alert" style="display: none;"></div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="mp-submit-btn" class="btn btn-primary form-submit-btn">
+              <span class="btn-text">Submit Inquiry</span>
+              <svg class="btn-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+              <span class="form-spinner" aria-hidden="true"></span>
+            </button>
+
+            <p class="form-privacy-note">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+              Your inquiry is handled with strict confidentiality.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div
+            style="margin-bottom: 1.5rem; display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+            <img src="images/mp-mark-light.svg" alt="Mastery &amp; Precise logo" loading="lazy"
+              style="height: 80px; width: auto; object-fit: contain;">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; line-height: 1.2;">
+              <span
+                style="font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.6rem; color: #fff; letter-spacing: 0.03em; white-space: nowrap;">MASTERY
+                &amp; PRECISE</span>
+              <span style="display: flex; align-items: center; gap: 0.5rem; white-space: nowrap; margin-top: 3px;">
+                <span
+                  style="height: 1px; width: 24px; background: linear-gradient(90deg, transparent, #C08A2C);"></span>
+                <span
+                  style="font-family: 'Space Grotesk', sans-serif; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: #C08A2C; font-weight: 600;">Business
+                  House Private Limited</span>
+                <span
+                  style="height: 1px; width: 24px; background: linear-gradient(90deg, #C08A2C, transparent);"></span>
+              </span>
+              <span
+                style="font-family: 'Space Grotesk', sans-serif; font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.45); white-space: nowrap; margin-top: 4px;">Mastery
+                in Vision. Precise in Action.</span>
+            </div>
+          </div>
+          <p>A multidisciplinary consulting organization helping businesses achieve sustainable growth through strategic
+            advisory, operational excellence, and digital transformation.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="#who">Who We Are</a></li>
+            <li><a href="#vision">Vision &amp; Mission</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#why">Why Choose Us</a></li>
+            <li><a href="#" onclick="event.preventDefault();">Our Ventures</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Business Consultancy</a></li>
+            <li><a href="#services">Supply Chain</a></li>
+            <li><a href="#services">Corporate Governance</a></li>
+            <li><a href="#services">Business Excellence</a></li>
+            <li><a href="#services">EdTech Services</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-tagline">Mastery in Vision. Precise in Action.</p>
+        <p>&copy; <span id="year"></span> <mark>Mastery &amp; Precise Business House Private Limited</mark>. All rights
+          reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Sticky header
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 60));
+
+    // Mobile menu
+    const toggle = document.getElementById('menuToggle');
+    const navlinks = document.getElementById('navlinks');
+    toggle.addEventListener('click', () => {
+      const open = navlinks.classList.toggle('open');
+      toggle.classList.toggle('active', open);
+      toggle.setAttribute('aria-expanded', open);
+    });
+    navlinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navlinks.classList.remove('open');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+
+    // Multi-level "Our Ventures" Navigation Interaction (Desktop + Mobile)
+    (function () {
+      const dropdown = document.getElementById('vendorsDropdown');
+      if (!dropdown) return;
+
+      const trigger = dropdown.querySelector('.nav-dropdown-trigger');
+      const countryItems = dropdown.querySelectorAll('.country-item');
+
+      // Toggle Our Ventures dropdown on click
+      trigger.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const isOpen = dropdown.classList.toggle('open');
+        trigger.setAttribute('aria-expanded', isOpen);
+      });
+
+      // Handle Country click / expand
+      countryItems.forEach(item => {
+        const countryBtn = item.querySelector('.country-btn');
+        if (!countryBtn) return;
+
+        countryBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          const wasOpen = item.classList.contains('open');
+
+          // Close other open countries (accordion behavior)
+          countryItems.forEach(sibling => {
+            if (sibling !== item) {
+              sibling.classList.remove('open');
+              const sBtn = sibling.querySelector('.country-btn');
+              if (sBtn) sBtn.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          const isNowOpen = !wasOpen;
+          item.classList.toggle('open', isNowOpen);
+          countryBtn.setAttribute('aria-expanded', isNowOpen);
+        });
+      });
+
+      // Close dropdown when clicking anywhere outside
+      document.addEventListener('click', function (e) {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('open');
+          trigger.setAttribute('aria-expanded', 'false');
+          countryItems.forEach(item => {
+            item.classList.remove('open');
+            const btn = item.querySelector('.country-btn');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+          });
+        }
+      });
+
+      // Escape key to close
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && dropdown.classList.contains('open')) {
+          dropdown.classList.remove('open');
+          trigger.setAttribute('aria-expanded', 'false');
+          countryItems.forEach(item => {
+            item.classList.remove('open');
+            const btn = item.querySelector('.country-btn');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+          });
+        }
+      });
+    })();
+
+    // Scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => io.observe(el));
+
+    // Staggered reveal for value cards
+    const valueCards = document.querySelectorAll('.value-card');
+    const valueIO = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('in'), i * 120);
+          valueIO.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    valueCards.forEach(el => valueIO.observe(el));
+
+    // Particle canvas - light copper tones
+    (function () {
+      const canvas = document.getElementById('bg-canvas');
+      const ctx = canvas.getContext('2d');
+      let W, H, particles;
+      function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+      window.addEventListener('resize', () => { resize(); init(); });
+      resize();
+      function init() {
+        particles = Array.from({ length: 45 }, () => ({
+          x: Math.random() * W, y: Math.random() * H,
+          vx: (Math.random() - .5) * .25, vy: (Math.random() - .5) * .25,
+          r: Math.random() * 1.8 + .5, alpha: Math.random() * .25 + .06
+        }));
+      }
+      init();
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 130) {
+              ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(192,138,44,${(1 - dist / 130) * .1})`; ctx.lineWidth = 0.6; ctx.stroke();
+            }
+          }
+        }
+        particles.forEach(p => {
+          ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(192,138,44,${p.alpha})`; ctx.fill();
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+          if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+        });
+        requestAnimationFrame(draw);
+      }
+      if (!window.matchMedia('(prefers-reduced-motion:reduce)').matches) draw();
+    })();
+
+    // Parallax on VM section images
+    (function () {
+      const vmCards = document.querySelectorAll('.vm-card-bg img');
+      if (!window.matchMedia('(prefers-reduced-motion:reduce)').matches) {
+        window.addEventListener('scroll', () => {
+          vmCards.forEach(img => {
+            const rect = img.parentElement.parentElement.getBoundingClientRect();
+            const speed = 0.15;
+            const yPos = -(rect.top * speed);
+            img.style.transform = `translateY(${yPos}px) scale(1.1)`;
+          });
+        }, { passive: true });
+      }
+    })();
+
+    // Preloader
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const preloader = document.getElementById('preloader');
+        if (preloader) preloader.classList.add('hide');
+      }, 700);
+    });
+
+    // Animated Counters
+    const counters = document.querySelectorAll('.counter-val');
+    const counterIO = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = +el.getAttribute('data-target');
+          const duration = 2000;
+          const step = target / (duration / 16);
+          let current = 0;
+          const updateCounter = () => {
+            current += step;
+            if (current < target) {
+              el.innerText = Math.ceil(current);
+              requestAnimationFrame(updateCounter);
+            } else {
+              el.innerText = target;
+            }
+          };
+          updateCounter();
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(c => counterIO.observe(c));
+
+    // Web3Forms AJAX Submission Handler for Mastery & Precise Business House
+    (function () {
+      const form = document.getElementById('mp-inquiry-form');
+      if (!form) return;
+
+      const result = document.getElementById('form-result');
+      const submitBtn = document.getElementById('mp-submit-btn');
+      const btnText = submitBtn.querySelector('.btn-text');
+      const defaultBtnText = btnText.textContent;
+      let isSubmitting = false;
+
+      const countrySelect = document.getElementById('form-country');
+      const otherCountryWrap = document.getElementById('other-country-wrap');
+      const otherCountryInput = document.getElementById('form-other-country');
+      const inquirySelect = document.getElementById('form-inquiry-type');
+
+      function syncSelectColor(sel) {
+        if (!sel) return;
+        sel.style.color = sel.value ? '#ffffff' : 'rgba(255, 255, 255, 0.45)';
+      }
+
+      if (countrySelect) {
+        countrySelect.addEventListener('change', function () {
+          syncSelectColor(this);
+          if (otherCountryWrap) {
+            if (this.value === 'Other') {
+              otherCountryWrap.style.display = 'block';
+              if (otherCountryInput) otherCountryInput.focus();
+            } else {
+              otherCountryWrap.style.display = 'none';
+              if (otherCountryInput) otherCountryInput.value = '';
+            }
+          }
+        });
+        syncSelectColor(countrySelect);
+      }
+
+      if (inquirySelect) {
+        inquirySelect.addEventListener('change', function () {
+          syncSelectColor(this);
+        });
+        syncSelectColor(inquirySelect);
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        if (isSubmitting) return;
+
+        // HTML5 validation check
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        // Validate Inquiry Type select dropdown
+        if (inquirySelect && !inquirySelect.value) {
+          inquirySelect.focus();
+          inquirySelect.reportValidity();
+          return;
+        }
+
+        // Set loading & submitting state
+        isSubmitting = true;
+        submitBtn.disabled = true;
+        submitBtn.classList.add('loading');
+        btnText.textContent = 'Transmitting Inquiry...';
+
+        result.style.display = 'none';
+        result.className = 'form-result';
+
+        const formData = new FormData(form);
+
+        // Format phone with selected country calling code
+        const countryCode = formData.get('country_code') || '';
+        const phone = (formData.get('phone') || '').toString().trim();
+        if (phone) {
+          formData.set('phone', phone.startsWith('+') ? phone : `${countryCode} ${phone}`.trim());
+        }
+        formData.delete('country_code');
+
+        // Handle "Other" country specification
+        const countryVal = formData.get('country') || '';
+        const otherCountry = (formData.get('other_country') || '').toString().trim();
+        if (countryVal === 'Other' && otherCountry) {
+          formData.set('country', otherCountry);
+        }
+        formData.delete('other_country');
+
+        // Customize email subject for recipient clarity
+        const inquiryType = formData.get('inquiry_type') || 'General Inquiry';
+        const senderName = formData.get('name') || 'Website Visitor';
+        formData.set('subject', `New Business Inquiry [${inquiryType}] — ${senderName}`);
+
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: json
+        })
+          .then(async (response) => {
+            const resData = await response.json();
+            if (response.status === 200 && resData.success) {
+              result.className = 'form-result success';
+              result.innerHTML = `
+                <span class="result-icon">&#10003;</span>
+                <div>
+                  <strong>Inquiry Transmitted Successfully</strong>
+                  <p>Thank you for reaching out to Mastery &amp; Precise Business House. Your inquiry has been forwarded to our team, and an executive advisor will connect with you shortly.</p>
+                </div>
+              `;
+              result.style.display = 'flex';
+              form.reset();
+              syncSelectColor(countrySelect);
+              syncSelectColor(inquirySelect);
+              if (otherCountryWrap) otherCountryWrap.style.display = 'none';
+            } else {
+              result.className = 'form-result error';
+              result.innerHTML = `
+                <span class="result-icon">&#9888;</span>
+                <div>
+                  <strong>Submission Error</strong>
+                  <p>${resData.message || 'There was an issue sending your inquiry. Please try again or email us directly at info@masteryandprecise.com.'}</p>
+                </div>
+              `;
+              result.style.display = 'flex';
+            }
+          })
+          .catch((error) => {
+            console.error('Web3Forms submission error:', error);
+            result.className = 'form-result error';
+            result.innerHTML = `
+              <span class="result-icon">&#9888;</span>
+              <div>
+                <strong>Network Connection Error</strong>
+                <p>Unable to connect to the inquiry service. Please verify your internet connection or email us directly at info@masteryandprecise.com.</p>
+              </div>
+            `;
+            result.style.display = 'flex';
+          })
+          .finally(() => {
+            isSubmitting = false;
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('loading');
+            btnText.textContent = defaultBtnText;
+            result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          });
+      });
+    })();
+  </script>
+</body>
+
+</html>
